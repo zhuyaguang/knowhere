@@ -100,6 +100,15 @@ class HNSWConfAdapter : public ConfAdapter {
     CheckSearch(Config& oricfg, const IndexType type, const IndexMode mode) override;
 };
 
+class HNSW2ConfAdapter : public ConfAdapter {
+ public:
+    bool
+    CheckTrain(Config& oricfg, const IndexMode mode) override;
+
+    bool
+    CheckSearch(Config& oricfg, const IndexType type, const IndexMode mode) override;
+};
+
 class ANNOYConfAdapter : public ConfAdapter {
  public:
     bool

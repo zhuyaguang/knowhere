@@ -290,6 +290,21 @@ HNSWConfAdapter::CheckSearch(Config& oricfg, const IndexType type, const IndexMo
 }
 
 bool
+HNSW2ConfAdapter::CheckTrain(Config& oricfg, const IndexMode mode) {
+    CheckIntByRange(knowhere::IndexParams::efConstruction, HNSW_MIN_EFCONSTRUCTION, HNSW_MAX_EFCONSTRUCTION);
+    CheckIntByRange(knowhere::IndexParams::M, HNSW_MIN_M, HNSW_MAX_M);
+
+    return ConfAdapter::CheckTrain(oricfg, mode);
+}
+
+bool
+HNSW2ConfAdapter::CheckSearch(Config& oricfg, const IndexType type, const IndexMode mode) {
+    CheckIntByRange(knowhere::IndexParams::ef, oricfg[knowhere::meta::TOPK], HNSW_MAX_EF);
+
+    return ConfAdapter::CheckSearch(oricfg, type, mode);
+}
+
+bool
 RHNSWFlatConfAdapter::CheckTrain(Config& oricfg, const IndexMode mode) {
     CheckIntByRange(knowhere::IndexParams::efConstruction, HNSW_MIN_EFCONSTRUCTION, HNSW_MAX_EFCONSTRUCTION);
     CheckIntByRange(knowhere::IndexParams::M, HNSW_MIN_M, HNSW_MAX_M);

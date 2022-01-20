@@ -34,6 +34,7 @@ enum class OldIndexType {
     FAISS_IVFPQ_MIX,
     SPTAG_BKT_RNT_CPU,
     HNSW,
+    HNSW2,
     ANNOY,
     RHNSW_FLAT,
     RHNSW_PQ,
@@ -63,6 +64,7 @@ extern const char* INDEX_SPTAG_KDT_RNT;
 extern const char* INDEX_SPTAG_BKT_RNT;
 #endif
 extern const char* INDEX_HNSW;
+extern const char* INDEX_HNSW2;
 extern const char* INDEX_RHNSWFlat;
 extern const char* INDEX_RHNSWPQ;
 extern const char* INDEX_RHNSWSQ;
